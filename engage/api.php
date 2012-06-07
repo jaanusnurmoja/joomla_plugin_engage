@@ -74,7 +74,7 @@ class Janrain_Engage_API extends plgContentEngage {
         $params = $this->_params->__toString(); //parse these to json string
         try {
             $db = &JFactory::getDBO();
-            $query = "UPDATE `#__extensions` SET `params`='$params' WHERE `name`='Authentication - Janrain Engage'";
+            $query = "UPDATE `#__extensions` SET `params`='$params' WHERE `name`='Content - Janrain Engage'";
             $db->setQuery($query);
             return $db->query(); // update plugin params
         } catch (Exception $e) {
