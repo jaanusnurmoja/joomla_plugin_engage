@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6.0" type="plugin" client="site" method="upgrade" group="content">
+    <name>Content - Janrain Engage</name>
+    <author>Jeremy Bradbury</author>
+    <creationDate>June 1, 2012</creationDate>
+    <copyright>(C) 2012 Janrain, Inc.. All rights reserved.</copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <authorEmail>info@janrain.com</authorEmail>
+    <authorUrl>developers.janrain.com</authorUrl>
+    <version>1.6.0</version>
+    <description><![CDATA[A plugin for Janrain Engage social registration, authentication & sharing service.]]></description>
+    <files>
+        <filename plugin="engage">engage.php</filename>
+        <filename plugin="engage">api.php</filename>
+        <filename plugin="engage">user.php</filename>
+        <filename plugin="engage">show.php</filename>
+        <filename plugin="engage">jn-icons16.png</filename>
+        <filename plugin="engage">jn-icons32.png</filename>
+        <filename plugin="engage">stylesheet.css</filename>
+        <filename plugin="engage">readme.txt</filename>
+    </files>
+    <scriptfile>engage.scriptfile.php</scriptfile>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" label="Engage Settings">
+                <field name="apikey" type="text" size="60" default="" label="API Key"
+                    description="Your Janrain Engage API Key" />
+                <field name="@1" type="spacer" default="" label="" description="" />
+                <field name="@auth" type="spacer" default="" label="Social Sign-in" description="" />
+                <field name="auth_auto" type="radio" default="0" label="Auto Registration"
+                    description="Autmatically registers and authenticates users for most providers. Redirects to registration form when disabled or for providers that do not support this feature. Supporting providers: Facebook, Google, Paypal, Yahoo!, Windows Live, Salesforce, Foursquare, Flickr, Hyves, MyOpenID, Verisign, VZ-Netzwerke, Wordpress.">
+                    <option value="0">Disable</option>
+                    <option value="1">Enable</option>
+                </field>
+                <field name="auth_btn" type="list" default="0"
+                    label="Generate Buttons"
+                    description="Autmatically place the Social Login Buttons. Nowhere: Use this to build your own buttons and place them in the template. In Module: Places the Buttons into a Login Module. First create the Module then enter it's ID below. In Content: Use {janrainengage auth} in any 'Articles', where you would like the buttons to appear. NOTE: In Content buttons show even when user is logged in and only one allowed per page.">
+                    <option value="0">Nowhere</option>
+                    <option value="1">In Module</option>
+                    <option value="2">In Content</option>
+                </field>
+                <field name="auth_last" type="hidden" default="0" label="Button last" />
+                <field name="auth_size" type="radio" default="large" label="Button Size"
+                    description="Choose your Social Sign-In Icon Size.">
+                    <option value="large">Large</option>
+                    <option value="small">Small</option>
+                </field>
+                <field name="auth_title" type="text" default="Login Form"
+                    label="Login Module Title"
+                    description="This is the Title of the Login Module you would like your Social Sign-in Buttons to appear." />
+                <field name="auth_loc" type="radio" default="pretext" label="Button Placement"
+                    description="The buttons will be inserted into the Login Form's 'Pre-Text' or 'Post-Text' fields.">
+                    <option value="pretext">Pre-Text</option>
+                    <option value="posttext">Post-Text</option>
+                </field>
+                <field name="@2" type="spacer" default="" label="" description="" />
+                <field name="@share" type="spacer" default="" label="Social Sharing" description="" />
+                <field name="share_btn" type="radio" default="0" label="Generate Buttons"
+                    description="Autmatically place the Social Sharing Buttons. Use {janrainengage share} in a 'Custom HTML' Module with 'Prepare Content' set to yes or any 'Articles', where you would like the buttons to appear. Note: Only one per page, any subsequent buttons will be not function.">
+                    <option value="0">Disable</option>
+                    <option value="1">Enable</option>
+                </field>
+                <field name="share_msg" type="text" size="140" default="Check out this article I found: "
+                    label="Share Message" 
+                    description="This text appears in the message portion of the sharing widget and works as a suggested prefix for the user to share." />
+                <field name="@3" type="spacer" default="" label="" description="" />
+                <field name="@auto" type="spacer" default="" label="Auto-Populated Settings"
+                    description="The following fields will be auto-populated when you 'Save and Close' this form after entering your API key above." />
+                <field name="refresh" type="list" default="0"
+                    label="Update Settings"
+                    description="If this is set to Refresh then the settings below will be updated upon 'save and close'. Note: if you only hit save the settings will not be visible until you close and return (or refresh the page).">
+                    <option value="0"> - </option>
+                    <option value="1">Refresh</option>
+                </field>
+                <field name="appid" type="text" size="24" default=""
+                    label="App ID"
+                    description="Your Janrain Engage App ID. This field will be auto-populated." />
+                <field name="app_alias" type="text" size="40" default=""
+                    label="App Alias"
+                    description="Your Janrain Engage App Alias. This field will be auto-populated." />
+                <field name="realm" type="text" size="50" default=""
+                    label="Realm"
+                    description="The realm of your Janrain Engage app. This field will be auto-populated." />
+                <field name="realmscheme" type="text" size="5" default=""
+                    label="Realm Scheme"
+                    description="The realm scheme of your Janrain Engage app. This field will be auto-populated." />
+                <field name="adminurl" type="text" size="80" default=""
+                    label="Admin URL"
+                    description="The Admin URL of your Janrain Engage app. This field will be auto-populated." />
+                <field name="socialpub" type="text" size="50" default=""
+                    label="Social Sharing Providers"
+                    description="The enabled social sharing providers for this app. This field will be auto-populated." />
+                <field name="providers" type="text" size="50" default=""
+                    label="Social Sign-in Providers"
+                    description="The enabled authentication providers for this app. This field will be auto-populated." />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
+                
+             
