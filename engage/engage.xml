@@ -2,12 +2,12 @@
 <extension version="1.6.0" type="plugin" client="site" method="upgrade" group="content">
     <name>Content - Janrain Engage</name>
     <author>Jeremy Bradbury</author>
-    <creationDate>June 1, 2012</creationDate>
+    <creationDate>June 2012</creationDate>
     <copyright>(C) 2012 Janrain, Inc.. All rights reserved.</copyright>
     <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
     <authorEmail>info@janrain.com</authorEmail>
-    <authorUrl>developers.janrain.com</authorUrl>
-    <version>1.6.0</version>
+    <authorUrl>http://developers.janrain.com</authorUrl>
+    <version>1.0.0</version>
     <description><![CDATA[A plugin for Janrain Engage social registration, authentication & sharing service.]]></description>
     <files>
         <filename plugin="engage">engage.php</filename>

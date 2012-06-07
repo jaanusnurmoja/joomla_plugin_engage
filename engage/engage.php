@@ -2,11 +2,9 @@
 /**
  * Janrain Engage Plugin for Joomla
  *
- * Document Long Description
+ * A plugin for Janrain Engage social registration, authentication & sharing service.
  *
- * PHP4/5
- *
- * Created on June 1, 2012
+ * Created on June 2012
  *
  * @package engage
  * @author Jeremy Bradbury
@@ -35,7 +33,6 @@ class plgContentEngage extends JPlugin {
     /**
      * Constructor
      *
-     *
      * @param object $subject The object to observe
      * @param object $config  The plugin paramters
      * @since 1.6
@@ -58,7 +55,6 @@ class plgContentEngage extends JPlugin {
                 $result = $user->add_engage_identifier($token);
             }
         }
-        return true;
     }
     /**
      * replaces script tag with share button in article content

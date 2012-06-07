@@ -2,11 +2,10 @@
 /**
  * Janrain Engage Plugin for Joomla
  *
- * Document Long Description
+ * The User class provides methods assiociated with registering and authenticating Joomla! Users.
+ * It also provides methods to attach Janrain Engage provider idenentfiers.
  *
- * PHP4/5
- *
- * Created on June 1, 2012
+ * Created on June 2012
  *
  * @package engage
  * @author Jeremy Bradbury
@@ -123,7 +122,7 @@ class Janrain_Engage_User extends Janrain_Engage_API {
             $options['action'] = 'core.login.site';
             $response['username'] = $username;
             return $app->triggerEvent('onUserLogin',array($response,$options));
-        } catch (Exception $e) { JError::raiseError("auth_error","{$e->getMessage()}"); }
+        } catch (Exception $e) { JFactory::getApplication()->redirect(JURI::base(), JText::_('Login error, please try again.' )); }
         return false;
     }
     /**
@@ -173,11 +172,11 @@ class Janrain_Engage_User extends Janrain_Engage_API {
                     if($this->addUser($auth_info,$user)) { // user added?
                         if($this->addIdent($auth_info,$user)) { return $this->doLogin($user->username); } // login new user
                         else { JError::raiseError("db_error","Identifier not inserted."); }
-                    } else { JError::raiseError("db_error", "User not added."); }
+                    } else { JFactory::getApplication()->redirect(JURI::base(), JText::_("Email and/or username address already exists. If you've previously registered with us, please login first to add your {$auth_info->profile->providerName} account." )); }
                 } // no identifier in token
             } // lookupUser failed
         } // invalid token
-        JError::raiseError("service_error",'Could not retrieve provider info. Please try again.');
+        JError::raiseError("Janran Engage Error",'Could not retrieve provider info. Please try again.');
         return false;
     }
     /**

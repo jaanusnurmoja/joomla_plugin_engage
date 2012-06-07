@@ -2,11 +2,10 @@
 /**
  * Janrain Engage Plugin for Joomla
  *
- * Document Long Description
+ * The API class provides methods assiociated with connecting to and executing
+ * Janrain Engage API calls, as well as, the Joomla! Plugin Manager parameters.
  *
- * PHP4/5
- *
- * Created on June 1, 2012
+ * Created on June 2012
  *
  * @package engage
  * @author Jeremy Bradbury
@@ -21,7 +20,7 @@ class Janrain_Engage_API extends plgContentEngage {
     const ACTIVITY  = 'auth_info';
     const LOOKUP_RP = 'lookup_rp';
     const UI_CONFIG = 'ui_config';
-    protected static  $param;
+    protected static $param;
     /**
      * build the plugin object and set some params
      */

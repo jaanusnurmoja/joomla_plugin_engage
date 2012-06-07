@@ -2,11 +2,9 @@
 /**
  * Janrain Engage Plugin for Joomla
  *
- * Document Long Description
+ * The Show class provides methods assiociated with the presentation layer (HTML/JS/CSS).
  *
- * PHP4/5
- *
- * Created on June 1, 2012
+ * Created on June 2012
  *
  * @package engage
  * @author Jeremy Bradbury
@@ -149,14 +147,19 @@ SCRIPT;
      * @return boolean
      */
     public static function updateLoginModule($content, $form='Login Form', $position='pretext'){
-        $module = JModuleHelper::getModule('login',$form);
-        $param  = new JRegistry($module->params); // grab existing params
-        $content = addslashes($content);
-        $param->set($position, $content);
-        $paramstring = $param->__toString(); // insert buttons and parse to json
-        $db = &JFactory::getDBO();
-        $query = "UPDATE `#__modules` SET `params`='$paramstring' WHERE `title`='$form'";
-        $db->setQuery($query);
-        return $db->query(); // send in the updated params
+        try {
+            $module = JModuleHelper::getModule('login',$form);
+            $param  = new JRegistry($module->params); // grab existing params
+            $content = addslashes($content);
+            $param->set($position, $content);
+            $paramstring = $param->__toString(); // insert buttons and parse to json
+            $db = &JFactory::getDBO();
+            $query = "UPDATE `#__modules` SET `params`='$paramstring' WHERE `title`='$form'";
+            $db->setQuery($query);
+            return $db->query(); // send in the updated params
+        } catch (Exception $e) {
+            JError::raiseError("Janrain Engage Error","It is likely that the 'Login Form Title' provided in the Engage Settings is incorrect.");
+        }
+
     }
 }
