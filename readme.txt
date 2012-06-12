@@ -26,4 +26,4 @@ Installation Instructions
 Notes: 
 *Only one type of each is allowed per page. The buttons may 'appear' in more than one place on a page if you place them so. However, only the first will function.
 *For security reasons Janrain's Javascript will not inject into Login and Registration pages. So if you place your buttons in a module, be sure not to place them on these pages.
-*If you want to use the buttons in your Template(s) instead, you must place buttons yourself. The code is available in your Engage Dashboard.
+*If you want to use the buttons in your Template(s) instead, you must place buttons yourself. The code is available under Deployment -> Sign-in for Web -> Get the Code on your Engage Dashboard: https://rpxnow.com/

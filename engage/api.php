@@ -8,7 +8,8 @@
  * Created on June 2012
  *
  * @package engage
- * @author Jeremy Bradbury
+ * @author Jeremy Bradbury <jeremy@janrain.com>
+ * @author Bryce Hamrick <bryce@janrain.com>
  * @author Janrain, Inc. <info@janrain.com>
  * @license GNU/GPL http://www.gnu.org/licenses/gpl.html
  * @copyright 2012 Janrain, Inc./Jeremy Bradbury
