@@ -74,9 +74,13 @@
             $profile_name = $this->profile_name($auth_info);
             $identifier_info = array('identifier' => $auth_info->profile->identifier, 'provider' => $auth_info->profile->providerName, 'profile_name' => $profile_name);
             $reg_info = $this->getReg($auth_info);
+			$n = rand(10e16, 10e20);
+			$psw = base_convert($n, 10, 36);
+
             $user->name         = $reg_info[0];
             $user->username     = $reg_info[1];
             $user->email        = $reg_info[2];
+            $user->password     = $psw;
             $user->sendEmail    = 1;
             try {
                 if($user->save()) { // user saved?
