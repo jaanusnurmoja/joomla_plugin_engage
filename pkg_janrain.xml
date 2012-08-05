@@ -12,8 +12,8 @@
 	
 	<folders>
 		
-		<folder group="content" id="Content - Janrain Engage" type="plugin">engage</folder>
 		<folder group="user" id="User - Janrain Register" type="plugin">register</folder>
+		<folder group="content" id="Content - Janrain Engage" type="plugin">engage</folder>
 		
 	</folders>
 </install>
