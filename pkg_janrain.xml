@@ -11,9 +11,23 @@
 	<description>Janrain Package</description>
 	
 	<folders>
-		
 		<folder group="user" id="User - Janrain Register" type="plugin">register</folder>
 		<folder group="content" id="Content - Janrain Engage" type="plugin">engage</folder>
-		
 	</folders>
+    <files group="content" id="Content - Janrain Engage" type="plugin">
+        <filename plugin="engage">engage.php</filename>
+        <filename plugin="engage">api.php</filename>
+        <filename plugin="engage">user.php</filename>
+        <filename plugin="engage">show.php</filename>
+        <filename plugin="engage">jn-icons16.png</filename>
+        <filename plugin="engage">jn-icons32.png</filename>
+        <filename plugin="engage">stylesheet.css</filename>
+		<filename plugin="engage">engage.xml</filename>
+    </files>
+    <files group="user" id="User - Janrain Register" type="plugin">>
+		<filename plugin="register">register.php</filename>
+ 		<filename plugin="register">register.xml</filename>
+   </files>
+
+    <scriptfile>engage/engage.scriptfile.php</scriptfile>
 </install>
