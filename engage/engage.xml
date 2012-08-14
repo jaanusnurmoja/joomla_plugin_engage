@@ -18,7 +18,6 @@
         <filename plugin="engage">jn-icons16.png</filename>
         <filename plugin="engage">jn-icons32.png</filename>
         <filename plugin="engage">stylesheet.css</filename>
-        <filename plugin="engage">readme.txt</filename>
     </files>
     <scriptfile>engage.scriptfile.php</scriptfile>
     <config>
