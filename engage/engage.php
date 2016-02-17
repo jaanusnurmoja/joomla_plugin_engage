@@ -37,12 +37,12 @@ class plgContentEngage extends JPlugin {
      * @param object $config  The plugin paramters
      * @since 1.6
      */
-    public function __construct(&$subject, $config){
+    public function __construct($subject, $config){
         require_once 'show.php'; // include the classes
-        $api  = new Janrain_Engage_API(&$subject, $config); // instantiate
-        $user = new Janrain_Engage_User(&$subject, $config); // instantiate
+        $api  = new Janrain_Engage_API($subject, $config); // instantiate
+        $user = new Janrain_Engage_User($subject, $config); // instantiate
         parent::__construct($subject,$config);
-        $this->_plugin =& JPluginHelper::getPlugin( 'content', 'engage' );
+        $this->_plugin = JPluginHelper::getPlugin( 'content', 'engage' );
         $this->_params = new JRegistry( $this->_plugin->params );
         $api->lookupRp(); // if no app id is set, grab Engage settings
         if(!empty($_POST['token'])) { // token posted?
@@ -94,7 +94,7 @@ class plgContentEngage extends JPlugin {
      * @param:  int     Optional page number. Unused. Defaults to zero.
      * @return: boolean Always true.
      */
-    function onContentPrepare($context,&$article,&$params,$limitstart){
+    function onContentPrepare($context,$article,$params,$limitstart){
         $auth_btn = $this->params->get('auth_btn');
         $share_btn = $this->params->get('share_btn');
         $size = $this->params->get('auth_size');

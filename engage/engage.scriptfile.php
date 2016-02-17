@@ -17,7 +17,7 @@
 class plgContentEngageInstallerScript {
     function uninstall($parent) { // destroys the Janrain Engage table
         echo '<p>'. JText::_('Uninstalling: Janrain Engage Plugin for Joomla! 1.6+') . '</p>';
-        $db = &JFactory::getDBO ();
+        $db = JFactory::getDBO ();
         $query = "DROP TABLE `#__janrainengage`";
         $db->setQuery ($query);
         $result = $db->query();
@@ -27,7 +27,7 @@ class plgContentEngageInstallerScript {
     function install($parent) {// created the Janrain Engage table
         echo '<p>'. JText::_('Installing: Janrain Engage Plugin for Joomla! 1.6+') .'</p>';
         // create the janrain engage table
-        $db = &JFactory::getDBO ();
+        $db = JFactory::getDBO ();
         $query = "CREATE TABLE `#__janrainengage`(
             id INT(11) NOT NULL AUTO_INCREMENT, PRIMARY KEY(id),
             identifier   VARCHAR(255),

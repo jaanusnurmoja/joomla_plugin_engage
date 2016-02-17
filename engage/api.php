@@ -26,7 +26,7 @@ class Janrain_Engage_API extends plgContentEngage {
      * build the plugin object and set some params
      */
     public function __construct(&$subject, $config){
-        $this->_plugin =& JPluginHelper::getPlugin( 'content', 'engage');
+        $this->_plugin = JPluginHelper::getPlugin( 'content', 'engage');
         $this->_params = new JRegistry( $this->_plugin->params );
         self::$param = $this->_params;
         self::$pub_base = str_ireplace("administrator/", "", JURI::base());
@@ -70,10 +70,9 @@ class Janrain_Engage_API extends plgContentEngage {
         $this->_params->set('adminurl',    self::$adminurl);
         $this->_params->set('socialpub',   self::$socialpub);
         $this->_params->set('providers',   self::$providers);
-        $this->_params->set('providers',   self::$providers);
         $params = $this->_params->__toString(); //parse these to json string
         try {
-            $db = &JFactory::getDBO();
+            $db = JFactory::getDBO();
             $query = "UPDATE `#__extensions` SET `params`='$params' WHERE `name`='Content - Janrain Engage'";
             $db->setQuery($query);
             return $db->query(); // update plugin params
@@ -111,7 +110,7 @@ class Janrain_Engage_API extends plgContentEngage {
      * @param string $token
      * @return json string|boolean
      */
-    public static function authInfo($token){
+    public function authInfo($token){
         if($token) {
             $params = array('token' => $token, 'apiKey' => self::$apikey);
             if ($auth_info = self::call(self::AUTH_INFO, $params, true)) {

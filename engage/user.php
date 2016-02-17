@@ -25,7 +25,7 @@
          */
         protected function lookupIdent($ident){
             try {
-                $db = &JFactory::getDBO ();
+                $db = JFactory::getDBO ();
                 $query = "SELECT `user_id` FROM `#__janrainengage` WHERE `identifier` = '$ident' LIMIT 1";
                 $db->setQuery($query);
                 return $db->loadResult();
@@ -42,7 +42,7 @@
         protected function lookupUser($ident){
             try {
                 if($exist_user_id = $this->lookupIdent($ident)) {
-                    $db = &JFactory::getDBO ();
+                    $db = JFactory::getDBO ();
                     $query = "SELECT `id`, `username` FROM `#__users` WHERE `id` = '$exist_user_id' LIMIT 1";
                     $db->setQuery ($query);
                     return $db->loadAssoc();
@@ -84,7 +84,7 @@
             $user->sendEmail    = 1;
             try {
                 if($user->save()) { // user saved?
-                    $db = &JFactory::getDBO ();
+                    $db = JFactory::getDBO ();
                     $query = "INSERT INTO `#__user_usergroup_map`
                     (`user_id`,`group_id`) VALUES
                     ('{$user->id}',2);";
@@ -102,7 +102,7 @@
          */
         protected function addIdent($auth_info,$user){
             try {
-                $db = &JFactory::getDBO ();
+                $db = JFactory::getDBO ();
                 $query = "INSERT INTO `#__janrainengage`
                 (`identifier`,`user_id`,`profile_name`, `provider`) VALUES
                 ('{$auth_info->profile->identifier}',

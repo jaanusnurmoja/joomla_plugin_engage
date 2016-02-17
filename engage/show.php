@@ -26,7 +26,7 @@ class EngageShow extends Janrain_Engage_User{
         if (is_array($providers)) {
             $wrap_open = '<a class="janrainEngage" href="#">';
             $wrap_close = '</a><br>';
-            foreach ($providers as &$val) { $rpx_buttons .= '<span class="jn-icon jn-size'.$iconSize.' jn-'.$val.'" title="'.htmlentities($val).'"></span>'; }
+            foreach ($providers as $val) { $rpx_buttons .= '<span class="jn-icon jn-size'.$iconSize.' jn-'.$val.'" title="'.htmlentities($val).'"></span>'; }
             $buttons = '<span class="rpx_button">' . $rpx_buttons . '</span>';
             return $wrap_open . $buttons . $wrap_close;
         }
@@ -51,7 +51,7 @@ class EngageShow extends Janrain_Engage_User{
      */
     public static function Css(){
         $path = parent::$pub_base . parent::$plug_path;
-        $doc = &JFactory::getDocument();
+        $doc = JFactory::getDocument();
         $style =".jn-size30{width:30px;height:30px;background-image:url('$path/jn-icons32.png');}
                  .jn-size16 {width:16px;height:16px;background-image:url('$path/jn-icons16.png');}";
         $doc->addStyleDeclaration($style);
@@ -63,7 +63,7 @@ class EngageShow extends Janrain_Engage_User{
      * @return boolean
      */
     public static function Js(){
-        $doc = &JFactory::getDocument();
+        $doc = JFactory::getDocument();
         $pageurl = "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
         $pagetitle = $doc->getTitle();
         $pagedescr = $doc->getMetaData('description');
@@ -153,7 +153,7 @@ SCRIPT;
             $content = addslashes($content);
             $param->set($position, $content);
             $paramstring = $param->__toString(); // insert buttons and parse to json
-            $db = &JFactory::getDBO();
+            $db = JFactory::getDBO();
             $query = "UPDATE `#__modules` SET `params`='$paramstring' WHERE `title`='$form'";
             $db->setQuery($query);
             return $db->query(); // send in the updated params
