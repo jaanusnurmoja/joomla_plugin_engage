@@ -76,7 +76,7 @@ class EngageShow extends Janrain_Engage_User{
     if (typeof window.janrain !== 'object') window.janrain = {};
     if (typeof window.janrain.settings !== 'object') window.janrain.settings = {};
   
-    janrain.settings.tokenUrl = '$tokenurl?janrain_engage=login';
+    janrain.settings.tokenUrl = '$tokenurl';
   
     function isReady() { janrain.ready = true; };
     if (document.addEventListener) {
