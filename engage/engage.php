@@ -46,14 +46,14 @@ class plgContentEngage extends JPlugin {
         $this->_params = new JRegistry( $this->_plugin->params );
         $api->lookupRp(); // if no app id is set, grab Engage settings
         if(!empty($_POST['token'])) { // token posted?
-            if($_GET['janrain_engage']=='login') { // login flag set?
+            // if($_GET['janrain_engage']=='login') { // login flag set?
                 $token = JRequest::getVar('token', false, 'post');  //grab the token
                 $result = $user->authenticate($token);
-            }
-            if($_GET['janrain_engage']=='add') { // register flag set?
+            // }
+            // if($_GET['janrain_engage']=='add') { // register flag set?
                 $token = JRequest::getVar('token', false, 'post');  //grab the token
                 $result = $user->add_engage_identifier($token);
-            }
+            // }
         }
     }
     /**
