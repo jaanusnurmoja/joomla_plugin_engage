@@ -136,7 +136,10 @@ class EngageShow extends Janrain_Engage_User{
     s.parentNode.insertBefore(e, s);
 })();
 SCRIPT;
-        $doc->addScriptDeclaration($js);
+        if ($app->isSite())
+		{
+			$doc->addScriptDeclaration($js);
+		}
         return true;
     }
     /**
